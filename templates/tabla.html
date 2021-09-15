@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Localidades Buscadas</h1>
+
+<p>En este sector, encontrara todas las Localidades que fueron buscadas por los distintos usuarios.</p>
+
+<table border="1">
+    <thead cellpadding="1.0" cellspacing="1.0">
+        <tr>
+            <th>Localidad</th>            
+            <th>Precio_min</th>
+            <th>Precio_max</th>
+            <th>Horario</th>
+        </tr>
+        {% for row in data %}
+        <tr>
+            <td>{{row['Localidad']}}</td> 
+            <td>{{row['Price_min']}}</td>
+            <td>{{row['Price_max']}}</td>
+            <td>{{row['Time']}}</td>
+        </tr>
+        {% endfor %}
+    </thead>
+</table>
+
+<br><br>
+
+
+<form action="{{url_for('reset')}}">
+    <input id= "1" type="submit" value="Resetear Base de Datos" />
+</form>
+{% endblock %}

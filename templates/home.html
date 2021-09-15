@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+
+  {% with messages = get_flashed_messages() %}
+{% if messages %}
+  {% for message in messages %}
+  <p class="parrafo">{{message}}</p>
+  {%  endfor %}
+{% endif %}
+{% endwith %}
+<div class="parrafo">
+  <p >Haremos uso de la API pública de mercadolibre para analizar
+    alquileres y departamentos segun su localidad y precios obtenidos por el usuario
+    Una vez obtenidos los datos, graficaremos todos aquellos departamentos que se encuentren
+    por debajo del precio minimo, los que esten  entre el precio minimo y maximo, y por ultimo
+    mostraremos todos aquellos departamentos que superen el precio maximo.
+</p>
+</div>
+
+
+<main>
+        <form method="POST" action="{{url_for('meli')}}" class="formulario" id="formulario1">
+            <!-- Grupo: Localidad -->
+            <div class="formulario__grupo" id="grupo__usuario">
+                <label for="localidad" class="formulario__label"><i class="fas fa-thumbtack" ></i>Localidad</label>
+                <div class="formulario__grupo-input">
+                    <input id="localidad"type="text" name="location"  class="formulario__input"placeholder="Ingrese Localidad" >
+                </div>
+            </div>
+
+            <!-- Grupo: Precio min -->
+            <div class="formulario__grupo" >
+                <label  for="precio_min"class="formulario__label"><i class="fas fa-dollar-sign"></i>Precio Minimo</label>
+                <div class="formulario__grupo-input">
+                    <input id="precio_min" class="formulario__input"  type="text" name="price_min"placeholder="Ingrese Precio " >
+                </div>
+            </div>
+
+            <!-- Grupo: Precio Max -->
+            <div class="formulario__grupo">
+                <label  for="precio_max" class="formulario__label"><i class="fas fa-dollar-sign"></i>Precio Maximo</label>
+                <div class="formulario__grupo-input">
+                    <input id="precio_max" type="text" name="price_max"class="formulario__input" placeholder="Ingrese Precio " >
+                </div>
+            </div>
+
+            <div class="formulario__grupo formulario__grupo-btn-enviar">
+                <button type="submit" class="formulario__btn"><i class="fas fa-search-location"></i>Buscar</button>
+            </div>
+        </form>
+</main>
+{% endblock %}

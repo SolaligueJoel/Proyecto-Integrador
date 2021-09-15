@@ -1,0 +1,13 @@
+{% extends "home.html" %}
+{% block content %}
+
+<img id="overview_img" src="">
+<script>
+    data = "{{overview_graph}}"
+    data = data.replace("b&#39;", "") // quitar primer corchete
+    data = data.replace("&#39;", "")  // quitar ùltimo bracecode
+    document.getElementById("overview_img").src = "data:image/png;base64," + data;
+</script>
+
+
+{% endblock %}
