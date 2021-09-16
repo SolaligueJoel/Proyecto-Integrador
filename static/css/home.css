@@ -136,5 +136,13 @@ main {
 	.formulario__btn {
 		width: 100%;
 	}
+	.parrafo{
+		width: auto;
+		margin-right: 44px;
+	}
+	.imagen{
+		display: flex;
+		flex-direction: column;
+	}
 }
 
