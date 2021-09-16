@@ -2,7 +2,7 @@
 # Proyecto Integrador 	
 _Proyecto realizado para la entrega final de Python Programador en [Inove](https://inove.com.ar/desarrolladorpython/)_
 
-## Meli App 	
+### Meli App 	
 _Esta API fue realizada en Python, para buscar y graficar alquileres de departamentos.
 Se utilizo flask para realizar un WebServer, implementando un **registro** e **inicio de sesión** para los usuarios._
 
@@ -30,9 +30,19 @@ python3 app.py
 ```
 
 ## Construido con :hammer:	
-- Visual Studio Code (https://code.visualstudio.com/)
-- Python 3.8 (https://www.python.org/downloads/release/python-385/)
-- Flask (https://flask.palletsprojects.com/en/2.0.x/)
-- Matplotlib (https://matplotlib.org/)
+- __Visual Studio Code__ (https://code.visualstudio.com/)
+- __Python 3.8__ (https://www.python.org/downloads/release/python-385/)
+- __Flask__ (https://flask.palletsprojects.com/en/2.0.x/)
+- __Matplotlib__ (https://matplotlib.org/)
+- __HTML,CSS y JS__
 
 ## Capturas :camera:	
+**Pantalla de inicio**
+![Logotipo](/static/imgs/home.png)
+
+**Pantalla de grafico**
+![Logotipo](/static/imgs/grafico.png)
+
+
+## Autor :man_technologist:	
+__**Joel Solaligue**__
