@@ -169,11 +169,6 @@ h1{
 	border: 3px solid #bb2929;
 }
 
-.icon{
-	min-width: 50px;
-	text-align: center;
-	color: #999;
-}
 
 /* ----- -----  Mediaqueries ----- ----- */
 @media screen and (max-width: 800px) {
@@ -181,13 +176,23 @@ h1{
 		grid-template-columns: 1fr;
 	}
 
+	.alert-error{
+		font-size: 11px;
+
+	}
+
+	h1,
+	.alert-error,
 	.formulario__grupo-terminos, 
 	.formulario__mensaje,
 	.formulario__grupo-btn-enviar {
 		grid-column: 1;
 	}
+	
 
 	.formulario__btn {
 		width: 100%;
 	}
+
+
 }
