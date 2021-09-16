@@ -43,7 +43,7 @@ python3 app.py
 **Pantalla de grafico**
 ![Logotipo](/static/imgs/grafico.png)
 
-## Version Online
+## Version Online :desktop_computer:	
 __Para probar la api sin necesidad de clonar el repositorio, ingrese al siguiente link:__
 http://joelsolaligue.pythonanywhere.com/
 
