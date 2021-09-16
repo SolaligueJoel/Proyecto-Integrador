@@ -36,17 +36,6 @@ localidad.db.init_app(app)
 users.db.init_app(app)
 
 
-"""
-TAREA
-
-VERIFICAR ERRORES DE PRECIO price max < price min
-enviar error del servidor al html
-README GITHUB
-
-"""
-
-
-
 
 
 #-----------------------------INDEX-----------------------------#
@@ -221,7 +210,6 @@ def localidades():
 def reset():
     try:
         localidad.create_schema()
-        result = "<h3> Base de datos re-generada!</h3>"
         return render_template('tabla.html')
     except:
         return jsonify({'trade': traceback.format_exc()})

@@ -1,12 +1,9 @@
 const formulario = document.getElementById('formulario');
 const inputs = document.querySelectorAll('#formulario input');
-const name = document.getElementById('name')
 
-const formulario2 = document.getElementById('formulario2')
 
 const expresiones = {
 	user: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
-	name: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
 	password: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/, //Mínimo ocho caracteres, al menos una letra y un número.
 	email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
 }
@@ -28,11 +25,11 @@ const validarFormulario = (e)=>{
 		break;
 		
 		case "email":
-			validarCampo(expresiones.email,e.target,'correo')
+			validarCampo(expresiones.email,e.target,'correo');
 			break;
 			
 		case "password":
-			validarCampo(expresiones.password,e.target,'password')
+			validarCampo(expresiones.password,e.target,'password');
 			validarPassword2()
 		break;
 		case "password2":
@@ -48,7 +45,7 @@ const validarCampo = (expresion, input, campo)=>{
 		document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-correcto');
 		document.querySelector(`#grupo__${campo} i`).classList.add('fa-check-circle');
 		document.querySelector(`#grupo__${campo} i`).classList.remove('fa-times-circle');
-		document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.remove('formulario__input-error-activo')
+		document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.remove('formulario__input-error-activo');
 		campos[campo] = true;
 
 	} else {
