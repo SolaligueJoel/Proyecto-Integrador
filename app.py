@@ -5,12 +5,12 @@ from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
 from flask import Flask, request, jsonify, render_template, Response
 from flask_login import LoginManager,login_required,login_user,logout_user,current_user
-from config import config
+from src.configuracion.config import config
 import os
-import localidad
 import pytz
-from users import User
-import users
+from src.clases.users import User
+from src.clases import localidad
+from src.clases import users
 
 
 app = Flask(__name__)
@@ -25,7 +25,7 @@ login_manager.login_view = 'login'
 script_path = os.path.dirname(os.path.realpath(__file__))
 
 # Obtener los parámetros del archivo de configuración
-config_path_name = os.path.join(script_path, 'config.ini')
+config_path_name = os.path.join(script_path ,'src/configuracion','config.ini')
 db_config = config('db', config_path_name)
 server_config = config('server', config_path_name)
 
@@ -34,8 +34,6 @@ app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///{db_config['database']}"
 
 localidad.db.init_app(app)
 users.db.init_app(app)
-
-
 
 
 #-----------------------------INDEX-----------------------------#

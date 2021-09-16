@@ -29,6 +29,8 @@ pip install -r requirements.txt
 python3 app.py
 ```
 
+## Esquema :file_folder:
+![logotipo](/static/imgs/estructura.png)	
 ## Construido con :hammer:	
 - __Visual Studio Code__ (https://code.visualstudio.com/)
 - __Python 3.8__ (https://www.python.org/downloads/release/python-385/)
