@@ -1,20 +1,10 @@
-from flask.wrappers import Response
-from sqlalchemy import Column, Integer, String, ForeignKey, DateTime
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import query, sessionmaker, relationship
-from sqlalchemy import func
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 import io
 import base64
-from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
-
-
-from time import gmtime, strftime
 import requests
 import matplotlib.pyplot as plt
-from werkzeug.utils import send_file
 
 db = SQLAlchemy()
 
