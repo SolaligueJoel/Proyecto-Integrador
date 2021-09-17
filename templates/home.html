@@ -43,6 +43,15 @@
                     <input id="precio_max" type="text" name="price_max"class="formulario__input" placeholder="Ingrese Precio " >
                 </div>
             </div>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert-error" >
+                <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b>{{message}}</p>
+            </div>
+            {%  endfor %}
+            {% endif %}
+            {% endwith %}
 
             <div class="formulario__grupo formulario__grupo-btn-enviar">
                 <button type="submit" class="formulario__btn"><i class="fas fa-search-location"></i>Buscar</button>

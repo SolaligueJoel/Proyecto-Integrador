@@ -146,7 +146,7 @@ def resetear():
 
     
 
-#----------------------------- TABLA LOCALIDADES -----------------------------#
+#----------------------------- HOME -----------------------------#
 
 @app.route("/home",methods=['GET','POST'])
 @login_required
@@ -163,17 +163,22 @@ def meli():
             location = str(request.form.get('location'))
             price_min = str(request.form.get('price_min'))
             price_max = str(request.form.get('price_max'))
-            if (location is None or price_min.isdigit() and price_max.isdigit() is False):
-                return Response(status=400)
-            localidad.insert(location,int(price_min),int(price_max),time)
-            
-            min = int(price_min)
-            max = int(price_max)
-            dataset = localidad.fetch(location)
-            data = localidad.transform(dataset,min,max)
-            encoded_img = localidad.grafico(data,location)
-            return render_template('grafico.html',overview_graph=encoded_img)
+            if not location:
+                flash("Ingrese una localidad.")
+                return render_template('home.html')
            
+            elif price_max < price_min or (price_min or price_max ==  ""):
+                flash("Precios incorrectos.")
+                return render_template('home.html')
+            else:
+                localidad.insert(location,int(price_min),int(price_max),time)
+                
+                min = int(price_min)
+                max = int(price_max)
+                dataset = localidad.fetch(location)
+                data = localidad.transform(dataset,min,max)
+                encoded_img = localidad.grafico(data,location)
+                return render_template('grafico.html',overview_graph=encoded_img)           
         except:
             return jsonify({'trace': traceback.format_exc()})
 

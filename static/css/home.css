@@ -124,6 +124,19 @@ main {
 	color: #999;
 }
 
+.alert-error{
+	height: 30px;
+	line-height: 30px;
+	background: #F66060;
+	padding: 0 15px;
+	border-radius: 3px;
+	font-size: 15px;
+}
+
+.alert-error p{
+	margin:0;
+}
+
 @media screen and (max-width:800px){
     nav{
 		display: flex;
