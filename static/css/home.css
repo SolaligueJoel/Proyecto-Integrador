@@ -137,6 +137,10 @@ main {
 	margin:0;
 }
 
+#overview_img{
+	background-color:#E5E5E5 ;
+}
+
 @media screen and (max-width:800px){
     nav{
 		display: flex;

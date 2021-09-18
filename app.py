@@ -166,19 +166,21 @@ def meli():
             if not location:
                 flash("Ingrese una localidad.")
                 return render_template('home.html')
-           
-            elif price_max < price_min or (price_min or price_max ==  ""):
+            elif price_min > price_max:
                 flash("Precios incorrectos.")
                 return render_template('home.html')
-            else:
-                localidad.insert(location,int(price_min),int(price_max),time)
-                
-                min = int(price_min)
-                max = int(price_max)
-                dataset = localidad.fetch(location)
-                data = localidad.transform(dataset,min,max)
-                encoded_img = localidad.grafico(data,location)
-                return render_template('grafico.html',overview_graph=encoded_img)           
+            elif (price_min or price_max) == "":
+                flash("Precios incorrectos.")
+                return render_template('home.html') 
+                          
+            localidad.insert(location,int(price_min),int(price_max),time)
+            
+            min = int(price_min)
+            max = int(price_max)
+            dataset = localidad.fetch(location)
+            data = localidad.transform(dataset,min,max)
+            encoded_img = localidad.grafico(data,location)
+            return render_template('grafico.html',overview_graph=encoded_img)           
         except:
             return jsonify({'trace': traceback.format_exc()})
 
